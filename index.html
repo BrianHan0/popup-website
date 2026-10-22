@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAT?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CONFIGURATION: Edit these placeholders -->
+    <div id="config" style="display: none;">
+        <span id="restaurantName">WAT?</span>
+        <span id="instagram">https://instagram.com</span>
+        <span id="contactEmail">hello@theunlisted.local</span>
+        <span id="nextDate">Soon</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" id="title">WAT?</h1>
+            <p class="hero-tagline">LaMao.</p>
+            <div class="flicker" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- The Secret -->
+    <section id="secret" class="secret">
+        <h2>The Secret</h2>
+        <div class="secret-text">
+            <p>A table appears once. In a place you won't find on a map.</p>
+            <p>The location is revealed 24 hours before service.</p>
+            <p>Everything else is kept.</p>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- The Menu (Redacted) -->
+    <section id="menu" class="menu">
+        <h2>This Evening's Service</h2>
+        <div class="menu-section">
+            <h3>First</h3>
+            <p class="menu-clue">Smoke, salt, and the contrast of cold and crisp.</p>
+        </div>
+
+        <div class="menu-section">
+            <h3>Second</h3>
+            <p class="menu-clue">Forest floor meets the sweet umami of earth.</p>
+        </div>
+
+        <div class="menu-section">
+            <h3>Third</h3>
+            <p class="menu-clue">From the sea. Golden, delicate, precise.</p>
+        </div>
+
+        <div class="menu-section">
+            <h3>Fourth</h3>
+            <p class="menu-clue">Butter, fire, and the art of knowing when to stop.</p>
+        </div>
+
+        <div class="menu-section">
+            <h3>Fifth</h3>
+            <p class="menu-clue">The end arrives sweet, dark, and lingering.</p>
+        </div>
+
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Next Night -->
+    <section id="next" class="next-night">
+        <h2>The Next Night</h2>
+        <p class="date" id="nextDate">October 27th 2026</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Tell no one.</p>
+    </footer>
+
+    <!-- Film Grain SVG Overlay -->
+    <svg style="display: none;">
+        <defs>
+            <filter id="grain">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" />
+                <feColorMatrix in="noise" type="saturate" values="0" />
+                <feBlend in="SourceGraphic" in2="noise" mode="multiply" />
+            </filter>
+        </defs>
+    </svg>
+
+    <script src="script.js"></script>
+</body>
+</html>

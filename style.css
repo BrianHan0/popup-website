@@ -1,0 +1,450 @@
+/* =======================
+   VARIABLES & RESET
+   ======================= */
+
+:root {
+    /* Color palette - minimalist */
+    --bg-light: #fafaf8;
+    --bg-white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-gray: #666666;
+    --text-light: #999999;
+    --accent-black: #000000;
+    --divider: #e8e8e8;
+
+    /* Typography */
+    --font-sans: "Montserrat", sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    /* Animation */
+    --transition-normal: 400ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-white);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* =======================
+   TYPOGRAPHY
+   ======================= */
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--text-dark);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-dark);
+    transition: all var(--transition-normal);
+}
+
+a:hover {
+    color: var(--text-light);
+    border-bottom-color: var(--text-light);
+}
+
+/* =======================
+   LAYOUT & SECTIONS
+   ======================= */
+
+section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeInUp 800ms ease 200ms forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background: var(--bg-white);
+    animation: fadeInUp 1000ms ease forwards;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+.hero-tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--text-gray);
+    margin-bottom: 0;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: var(--divider);
+    max-width: 100px;
+    margin: var(--spacing-xl) auto;
+}
+
+/* Secret Section */
+.secret {
+    text-align: center;
+    background: var(--bg-light);
+}
+
+.secret h2 {
+    margin-bottom: var(--spacing-lg);
+}
+
+.secret-text {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.secret-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: var(--spacing-lg);
+}
+
+.secret-text p:last-child {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* =======================
+   MENU SECTION
+   ======================= */
+
+.menu {
+    background: var(--bg-white);
+    padding: var(--spacing-xl) var(--spacing-md) !important;
+}
+
+.menu h2 {
+    margin-bottom: var(--spacing-xl);
+}
+
+.menu-section {
+    margin-bottom: var(--spacing-xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-section:last-child {
+    margin-bottom: 0;
+}
+
+.menu-section h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+
+/* Menu clue */
+.menu-clue {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-gray);
+    letter-spacing: 1px;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================
+   NEXT NIGHT SECTION
+   ======================= */
+
+.next-night {
+    text-align: center;
+    background: var(--bg-light);
+}
+
+.next-night h2 {
+    margin-bottom: var(--spacing-xl);
+}
+
+.date {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    margin: var(--spacing-xl) 0;
+}
+
+.cta {
+    display: flex;
+    gap: var(--spacing-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
+}
+
+/* =======================
+   BUTTONS
+   ======================= */
+
+.button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--text-dark);
+    background: transparent;
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--text-dark);
+    z-index: -1;
+    transition: left var(--transition-normal);
+}
+
+.button:hover::before,
+.button:focus::before {
+    left: 0;
+}
+
+.button:hover,
+.button:focus {
+    color: var(--bg-white);
+    outline: none;
+}
+
+/* =======================
+   FOOTER
+   ======================= */
+
+.footer {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    border-top: 1px solid var(--divider);
+    margin-top: var(--spacing-xl);
+    background: var(--bg-white);
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =======================
+   RESPONSIVE DESIGN
+   ======================= */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+    }
+
+    .date {
+        font-size: 2rem;
+    }
+
+    .cta {
+        gap: var(--spacing-md);
+    }
+
+    .button {
+        padding: 0.85rem 1.5rem;
+        font-size: 0.8rem;
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .divider {
+        margin: var(--spacing-lg) auto;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-xl: 3rem;
+        --spacing-lg: 2rem;
+        --spacing-md: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.95rem;
+    }
+
+    .menu {
+        padding: var(--spacing-lg) var(--spacing-sm) !important;
+    }
+
+    .redacted-bar {
+        max-width: 100%;
+    }
+
+    .date {
+        font-size: 1.5rem;
+    }
+
+    .cta {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
+/* =======================
+   UTILITIES
+   ======================= */
+
+section.fade-in {
+    opacity: 1 !important;
+    animation: fadeInUp 800ms ease forwards;
+}
